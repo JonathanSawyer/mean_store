@@ -1,0 +1,4 @@
+{
+	"verbose": false,
+	"ignore": ["lib/tests/*", "lib/public/*"]
+}

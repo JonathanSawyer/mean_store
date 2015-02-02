@@ -1,0 +1,35 @@
+GIVEN I am a registered user
+AND I have logged in
+AND I choose a product category
+AND I add some items to my shopping cart
+AND I go to the order page
+WHEN I submit the order
+THEN the order is received and stored
+AND I am notified of a successful order
+
+GIVEN I am a user
+AND I navigate to a product category
+WHEN I add a product to my shopping cart
+THEN an indicator shows how many items I have and what is the total cost
+
+GIVEN I am a user
+AND I am viewing a product's details
+WHEN I add the product to my shopping cart
+THEN an indicator shows how many items I have and what is the total cost
+
+GIVEN I am a user
+WHEN I navigate to a product category
+THEN I see a list of all non-hidden products in that category
+
+GIVEN I am a user
+WHEN I browse to "All products"
+THEN I see a list of all non-hidden products in the system
+
+GIVEN I am a user
+WHEN I search for an item
+THEN I am shown a list of products for which the names contain my search keyword, case insensitive
+
+GIVEN I am a user
+WHEN I type my search keyword
+THEN I am shown some results as I am typing
+AND by clicking on one of them I am shown that product

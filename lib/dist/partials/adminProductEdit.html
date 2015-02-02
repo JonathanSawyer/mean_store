@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<h1 ng-if="mode === 'edit'">Editing &quot;{{product.name}}&quot;</h1>
+		<h1 ng-if="mode === 'create'">Create product</h1>
+		<form role="form">
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input class="form-control" type="text" name="name" ng-model="product.name">
+			</div>
+			<div class="form-group">
+				<label for="category">Category</label>
+				<input class="form-control" type="text" name="category" ng-model="product.category" typeahead="category for category in categories | filter:$viewValue | limitTo:5">
+			</div>
+			<div class="form-group">
+				<label for="descr">Description</label>
+				<textarea ng-model="product.description" name="descr" id="descr" cols="30" rows="5" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="price">Price</label>
+				<input type="text" class="form-control" ng-model="product.price">
+			</div>
+			<button class="btn btn-primary" ng-click="save(product)">Save changes</button>
+			<button ng-if="mode === 'edit' && !product.deleted" class="btn btn-danger" ng-click="remove(product)">Delete product</button>
+			<button ng-if="mode === 'edit' && product.deleted" class="btn btn-default" ng-click="undelete(product)">Undelete product</button>
+		</form>
+	</div>
+</div>

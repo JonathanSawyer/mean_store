@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<h1>Administration</h1>
+		<tabset>
+			<tab heading="Products" active="active.products" select="tabSelected('products')">
+				<button class="btn btn-success" ng-click="createProduct()">Create new</button>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Product</th>
+							<th>Price</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="prod in products | orderBy : ['deleted', 'name']" ng-class="{ 'grayed-out' : prod.deleted}">
+							<td>{{prod.name}}</td>
+							<td>{{prod.price | currency}}</td>
+							<td>
+								<button ng-click="editProduct(prod)" class="btn btn-default">Edit</button>
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+			</tab>
+			<tab heading="Orders" active="active.orders" select="tabSelected('orders')">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Total price</th>
+							<th>Sent?</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="order in orders | orderBy : ['sent','created_at']" ng-class="{ 'grayed-out' : order.sent }">
+							<td>{{order.created_at | date : 'short'}}</td>
+							<td>{{order.total | currency}}</td>
+							<td><span ng-if="order.sent">Yes</span><span ng-if="!order.sent">No</span></td>
+							<td><button class="btn btn-default" ng-click="viewOrder(order)">View</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</tab>
+		</tabset>
+	</div>
+</div>

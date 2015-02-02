@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<div ng-hide="orderDone">
+			<h1>Order summary</h1>
+
+			<h1>Shipping details</h1>
+			<p ng-hide="user" class="help-block">By <a href="#/signup">creating an account</a> you could get these fields filled automatically :)</p>
+			<form ng-submit="submitOrder()">
+				<div class="form-group">
+					<label>First name</label>
+					<input class="form-control" type="text" ng-model="info.firstName">
+				</div>
+				<div class="form-group">
+					<label>Last name</label>
+					<input class="form-control" type="text" ng-model="info.lastName">
+				</div>
+				<div class="form-group">
+					<label>Street address</label>
+					<input class="form-control" type="text" ng-model="info.streetAddress">
+				</div>
+				<div class="form-group">
+					<label>Postal code</label>
+					<input class="form-control" type="text" ng-model="info.postalCode">
+				</div>
+				<div class="form-group">
+					<label>City</label>
+					<input class="form-control" type="text" ng-model="info.city">
+				</div>
+				
+				<div class="form-group">
+					<button class="btn btn-default pull-left" ng-click="backToCart()">Back to cart</button>
+					<button class="btn btn-primary pull-right" type="submit">Submit order!</button>
+				</div>
+				
+			</form>
+		</div>
+		<div ng-show="orderDone">
+			<div class="jumbotron">
+				<h1>Thank you for your order!</h1>
+				<button class="btn btn-primary" ng-click="backToFront()">Go back to shopping</button>
+			</div>
+		</div>
+		
+	</div>
+</div>

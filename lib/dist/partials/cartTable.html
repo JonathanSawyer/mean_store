@@ -1,0 +1,29 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Quantity</th>
+			<th>Price</th>
+			<th>Total</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in getCart()">
+			<td>{{item.name}}</td>
+			<td>
+				<button ng-disabled="item.quantity <= 1" ng-click="decrement(item)" class="btn btn-default">-</button>
+				<input type="number" ng-model="item.quantity" />
+				<button ng-click="increment(item)" class="btn btn-default">+</button>
+			</td>
+			<td>{{item.price | currency}}</td>
+			<td>{{item.price * item.quantity | currency}}</td>
+			<td>
+				<button ng-click="remove(item)" class="btn btn-danger">Remove</button>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5"><b>Total : {{cartPrice() | currency}}</b></td>
+		</tr>
+	</tbody>
+</table>

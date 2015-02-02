@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default" ng-repeat="prod in products">
+			<div class="panel-heading"><a ng-href="#/products/{{prod.category}}/{{prod._id}}">{{prod.name}}</a></div>
+			<div class="panel-body">
+				<span class="product-description">{{prod.description}}</span>
+				<div class="pull-right">{{prod.price | currency}}</div>
+				<div><button ng-click="addToCart(prod)" class="btn btn-primary pull-right">Add to cart</button></div>
+			</div>
+		</div>
+	</div>
+</div>
