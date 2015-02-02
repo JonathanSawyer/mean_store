@@ -8,4 +8,4 @@ service:
 before_script:
   - npm install -g bower
   - bower install
-  - node ./bin/webdriver-manager update
+  - node ./node_modules/.bin/webdriver-manager update
