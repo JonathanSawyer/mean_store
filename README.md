@@ -1,3 +1,5 @@
+![alt text](https://travis-ci.org/juunas11/mean_store.svg)
+
 # MEAN store
 A simple web store built on the MEAN stack to study best practices with MEAN development.
 
