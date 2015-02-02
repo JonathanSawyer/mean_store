@@ -7,10 +7,7 @@ var gulpif = require("gulp-if");
 var notify = require('gulp-notify');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
-var changed = require('gulp-changed');
-var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
 var minifyCSS = require('gulp-minify-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var sass = require('gulp-sass');
@@ -174,7 +171,7 @@ gulp.task("server-test", function(){
 
 gulp.task("client-test", function(){
 	return gulp.src(src.karma)
-		.pipe(karma(({
+		.pipe(karma({
 			configFile: 'karma.conf.js',
 			action: 'run'
 		}));
