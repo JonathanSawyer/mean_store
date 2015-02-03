@@ -1,18 +1,18 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
 env:
+  matrix:
   - NODE_ENV=test
+  global:
+  - secure: KpzVG+Vj6N3/tqsAsC91Sd+PnkRkU48QD8vzZJtbNcOy/yANLOZiMMVbPH2Dut5M5tsFfb85cRnSaF2wwwWGHYcNSie5KGmfIyPXZgvr06NZrUXSZT1fzLOHJv+8v+bM+cbYx+CEkDtbpq0BHCA/vZdJk4urDl8+uJTUvu4oX8s=
+  - secure: ZXXIGut5sBUWYy70r5QWF0lshu6PtExznvX8KJv1McnykzauGN7bODo1pSy5ZaAgnnekcDUPWJzjU132tTCQ6mizXYJ4RrQb+9KLMRO6YtngSNXsz4eJS1C4umw4W+204Y5BT1wlFBdDIMXjgPT1RljBfsWd0J9ddy+MrEUHMRI=
 services:
-  - mongodb
+- mongodb
 install:
-  - npm install -q
+- npm install -q
 addons:
-  sauce_connect:
-    username: "juunas11"
-    access_key: "a807b117-8488-41f8-8ac6-7f4943c3f6a9"
+  sauce_connect: true
 before_script:
-  - npm install -g -q bower
-  - bower install
-  - node ./node_modules/.bin/webdriver-manager update
-  - sleep 15
+- npm install -g -q bower
+- bower install
