@@ -101,7 +101,7 @@ gulp.task('vendor-css-maps', function(){
 		.pipe(gulp.dest('lib/dist/css'));
 });
 
-gulp.task('scripts', ['jshint'], function(){
+gulp.task('scripts', function(){
 	return gulp.src(src.client.js)
 		.pipe(ngAnnotate())
 		.pipe(concat('scripts.js'))
@@ -156,6 +156,8 @@ gulp.task('auto-deploy', function(){
 	gulp.watch(src.vendor.cssMaps, ["vendor-css-maps"]);
 });
 
+gulp.task('auto', ['auto-deploy', 'auto-test']);
+
 gulp.task('deploy', ["vendor-js", "vendor-css", "vendor-css-maps", "scripts", "styles", "html-index", "html-partials", "fonts"]);
 
 gulp.task("server-test", function(){
@@ -208,6 +210,10 @@ gulp.task("jshint", function(){
 	      }).join("\n");
 	      return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
 	    }));
+});
+
+gulp.task("jshint-w", function(){
+	gulp.watch(src.jshint, ["jshint"]);
 });
 
 gulp.task('e2e-test', function(){

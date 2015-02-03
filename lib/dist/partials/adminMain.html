@@ -37,7 +37,7 @@
 						<tr ng-repeat="order in orders | orderBy : ['sent','created_at']" ng-class="{ 'grayed-out' : order.sent }">
 							<td>{{order.created_at | date : 'short'}}</td>
 							<td>{{order.total | currency}}</td>
-							<td><span ng-if="order.sent">Yes</span><span ng-if="!order.sent">No</span></td>
+							<td><span class="order-status" ng-if="order.sent">Yes</span><span class="order-status" ng-if="!order.sent">No</span></td>
 							<td><button class="btn btn-default" ng-click="viewOrder(order)">View</button></td>
 						</tr>
 					</tbody>

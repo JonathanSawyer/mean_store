@@ -33,3 +33,11 @@ GIVEN I am a user
 WHEN I type my search keyword
 THEN I am shown some results as I am typing
 AND by clicking on one of them I am shown that product
+
+GIVEN I am a registered non-admin user
+WHEN I log in
+THEN I do not see a link to the admin section
+
+GIVEN I am a registered admin user
+WHEN I log in
+THEN I see a link to the admin section
