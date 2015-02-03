@@ -16,3 +16,4 @@ addons:
 before_script:
 - npm install -g -q bower
 - bower install
+- node . &
