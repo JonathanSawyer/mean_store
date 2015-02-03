@@ -1,4 +1,5 @@
-![alt text](https://travis-ci.org/juunas11/mean_store.svg)
+[![Build Status](https://travis-ci.org/juunas11/mean_store.svg?branch=master)](https://travis-ci.org/juunas11/mean_store)
+[![Sauce Test Status](https://saucelabs.com/buildstatus/juunas11)](https://saucelabs.com/u/juunas11)
 
 # MEAN store
 A simple web store built on the MEAN stack to study best practices with MEAN development.
