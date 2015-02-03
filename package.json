@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "gulp server-test"
+    "test": "gulp server-test client-test"
   },
   "author": "Joonas Westlin",
   "license": "MIT",

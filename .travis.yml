@@ -7,6 +7,5 @@ service:
   - mongodb
 before_script:
   - npm install -g bower
-  - npm install -g phantomjs@1.9.15
   - bower install
   - node ./node_modules/.bin/webdriver-manager update
