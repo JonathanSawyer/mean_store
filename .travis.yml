@@ -1,17 +1,18 @@
 language: node_js
 node_js:
-- "0.10"
+  - "0.10"
 env:
-- NODE_ENV=test
+  - NODE_ENV=test
 service:
-- mongodb
+  - mongodb
 install:
-- npm install -q
+  - npm install -q
 addons:
   sauce_connect:
     username: "juunas11"
     access_key: "a807b117-8488-41f8-8ac6-7f4943c3f6a9"
 before_script:
-- npm install -g -q bower
-- bower install
-- node ./node_modules/.bin/webdriver-manager update
+  - npm install -g -q bower
+  - bower install
+  - node ./node_modules/.bin/webdriver-manager update
+  - sleep 15
