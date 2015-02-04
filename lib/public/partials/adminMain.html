@@ -2,7 +2,7 @@
 	<div class="col-md-8 col-md-offset-2">
 		<h1>Administration</h1>
 		<tabset>
-			<tab heading="Products" active="active.products" select="tabSelected('products')">
+			<tab id="productsTab" heading="Products" active="active.products" select="tabSelected('products')">
 				<button class="btn btn-success" ng-click="createProduct()">Create new</button>
 				<table class="table table-striped">
 					<thead>
@@ -23,7 +23,7 @@
 					</tbody>
 				</table>
 			</tab>
-			<tab heading="Orders" active="active.orders" select="tabSelected('orders')">
+			<tab id="ordersTab" heading="Orders" active="active.orders" select="tabSelected('orders')">
 				<table class="table table-striped">
 					<thead>
 						<tr>
