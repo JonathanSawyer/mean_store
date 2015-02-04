@@ -14,6 +14,10 @@ Run `npm install` and `bower install` to install the dependencies.
 Then you can run `node .` to start the server.
 
 ## Testing
+I used Gulp as my task runner, it should be installed with `npm install -g gulp`.
+
+To run end-to-end tests, you must first execute `node_modules\.bin\webdriver-manager update` (on Windows). Then running `gulp e2e-test` will execute them in Chrome.
+
 To run all tests, run `gulp test`.
 
-`gulp auto-test` paired with another window running `gulp auto-deploy` will automatically build and validate files.
+`gulp auto` will automatically build and validate files.
