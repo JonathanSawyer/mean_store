@@ -217,11 +217,12 @@ gulp.task("jshint-w", function(){
 });
 
 gulp.task('e2e-test', function(){
-	gulp.src(src.e2e)
-		.pipe(protractor({
-			configFile : 'lib/tests/e2e/conf.js',
-			args: ['--baseUrl', 'http://localhost:8082'],
-			debug: false
-		}))
-		.on('error', function(e) { throw e; });
+	process.env.NODE_ENV = "test";
+	return gulp.src(src.e2e)
+			.pipe(protractor({
+				configFile : 'lib/tests/e2e/conf.js',
+				args: ['--baseUrl', 'http://localhost:8082'],
+				debug: false
+			}))
+			.on('error', function(e) { throw e; });
 });
