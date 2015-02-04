@@ -41,3 +41,13 @@ THEN I do not see a link to the admin section
 GIVEN I am a registered admin user
 WHEN I log in
 THEN I see a link to the admin section
+
+GIVEN I am a registered admin user
+AND I have logged in
+WHEN I navigate to the products tab on the admin page
+THEN I see a list of all products in the system
+
+GIVEN I am a registered admin user
+AND I have logged in
+WHEN I navigate to the orders tab on the admin page
+THEN I see a list of all orders in the system
