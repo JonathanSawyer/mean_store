@@ -14,6 +14,7 @@ var sass = require('gulp-sass');
 var minifyHtml = require('gulp-minify-html');
 var livereload = require('gulp-livereload');
 var argv = require('yargs').argv;
+var changed = require('gulp-changed');
 
 var src = {
 	mocha : {
@@ -128,6 +129,7 @@ gulp.task('html-index', function(){
 
 gulp.task('html-partials', function(){
 	return gulp.src(src.client.html.partials, {base : './lib/public/partials'})
+		.pipe(changed('lib/dist/partials'))
 		.pipe(gulpif(isMinifying(), minifyHtml()))
 		.pipe(gulp.dest('lib/dist/partials'))
 		.pipe(livereload());
@@ -156,7 +158,7 @@ gulp.task('auto-deploy', function(){
 	gulp.watch(src.vendor.cssMaps, ["vendor-css-maps"]);
 });
 
-gulp.task('auto', ['auto-deploy', 'auto-test']);
+gulp.task('auto', ['auto-deploy', 'auto-test', 'jshint-w']);
 
 gulp.task('deploy', ["vendor-js", "vendor-css", "vendor-css-maps", "scripts", "styles", "html-index", "html-partials", "fonts"]);
 
