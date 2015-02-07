@@ -51,3 +51,8 @@ GIVEN I am a registered admin user
 AND I have logged in
 WHEN I navigate to the orders tab on the admin page
 THEN I see a list of all orders in the system
+
+GIVEN I am a registered user
+AND I have logged in
+WHEN I click on Logout
+THEN My user information is no longer shown
