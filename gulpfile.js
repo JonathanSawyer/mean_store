@@ -219,6 +219,7 @@ gulp.task("jshint-w", function(){
 });
 
 gulp.task('e2e-test', function(){
+	process.env.E2E_BROWSER = argv.browser || 'chrome';
 	process.env.NODE_ENV = "test";
 	return gulp.src(src.e2e)
 			.pipe(protractor({

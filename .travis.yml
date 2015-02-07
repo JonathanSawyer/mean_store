@@ -19,4 +19,6 @@ before_script:
 script:
 - gulp server-test
 - gulp client-test
-- gulp e2e-test
+- gulp e2e-test --browser chrome
+- gulp e2e-test --browser firefox
+- gulp e2e-test --browser "internet explorer"
