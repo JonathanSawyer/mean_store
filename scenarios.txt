@@ -56,3 +56,14 @@ GIVEN I am a registered user
 AND I have logged in
 WHEN I click on Logout
 THEN My user information is no longer shown
+
+GIVEN I am a registered user
+AND I have logged in
+WHEN I refresh the page
+THEN I am still logged in
+
+GIVEN I am a registered user
+AND I have logged in with the option to remember my credentials
+AND I have closed the browser or was inactive for a set period
+WHEN I navigate to the store
+THEN I am logged back in automatically
