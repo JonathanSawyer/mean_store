@@ -60,6 +60,7 @@ var src = {
 		"bower_components/bootstrap/dist/js/bootstrap.js",
 		"bower_components/angular/angular.js",
 		"bower_components/angular-route/angular-route.js",
+		"bower_components/ngstorage/ngStorage.js",
 		"bower_components/angular-bootstrap/ui-bootstrap-tpls.js"
 		],
 		css : [
