@@ -15,6 +15,7 @@ var minifyHtml = require('gulp-minify-html');
 var livereload = require('gulp-livereload');
 var argv = require('yargs').argv;
 var changed = require('gulp-changed');
+var preprocess = require('gulp-preprocess');
 
 var src = {
 	mocha : {
@@ -123,6 +124,7 @@ gulp.task('styles', function(){
 
 gulp.task('html-index', function(){
 	return gulp.src(src.client.html.index)
+		.pipe(preprocess({context: { NODE_ENV: process.env.NODE_ENV || 'development'}}))
 		.pipe(gulpif(isMinifying(), minifyHtml()))
 		.pipe(gulp.dest('lib/dist'))
 		.pipe(livereload());
@@ -219,7 +221,7 @@ gulp.task("jshint-w", function(){
 	gulp.watch(src.jshint, ["jshint"]);
 });
 
-gulp.task('e2e-test', function(){
+gulp.task('e2e-test', ["deploy"], function(){
 	process.env.E2E_BROWSER = argv.browser || 'chrome';
 	process.env.NODE_ENV = "test";
 	return gulp.src(src.e2e)
