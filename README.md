@@ -6,12 +6,14 @@
 # MEAN store
 A simple web store built on the MEAN stack to study best practices with MEAN development.
 
+Introduction video: [Youtube](http://youtu.be/jdmERNBQ7es)
+
 ## Building
 To run the server you will need to have Node.js + NPM + Bower installed, as well as have a MongoDB available.
 
 Run `npm install` and `bower install` to install the dependencies.
 
-Then you can run `node .` to start the server.
+Then you can run `node .` to start the server. There is also a Nodemon configuration for running it with Nodemon.
 
 ## Testing
 I used Gulp as my task runner, it should be installed with `npm install -g gulp`.
