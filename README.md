@@ -3,7 +3,7 @@
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/juunas11.svg)](https://saucelabs.com/u/juunas11)
 
-# MEAN store
+# MEAN Store
 A simple web store built on the MEAN stack to study best practices with MEAN development.
 
 Introduction video: [Youtube](http://youtu.be/jdmERNBQ7es)
