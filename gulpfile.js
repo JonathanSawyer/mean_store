@@ -101,6 +101,7 @@ gulp.task('vendor-css', function(){
 
 gulp.task('vendor-css-maps', function(){
 	return gulp.src(src.vendor.cssMaps)
+		.pipe(changed('lib/dist/css'))
 		.pipe(gulp.dest('lib/dist/css'));
 });
 
@@ -124,6 +125,7 @@ gulp.task('styles', function(){
 
 gulp.task('html-index', function(){
 	return gulp.src(src.client.html.index)
+		.pipe(changed('lib/dist'))
 		.pipe(preprocess({context: { NODE_ENV: process.env.NODE_ENV || 'development'}}))
 		.pipe(gulpif(isMinifying(), minifyHtml()))
 		.pipe(gulp.dest('lib/dist'))
@@ -140,6 +142,7 @@ gulp.task('html-partials', function(){
 
 gulp.task('fonts', function(){
 	return gulp.src(src.client.fonts)
+		.pipe(changed('lib/dist/fonts'))
 		.pipe(gulp.dest('lib/dist/fonts'))
 		.pipe(livereload());
 });
