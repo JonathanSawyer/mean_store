@@ -67,3 +67,12 @@ AND I have logged in with the option to remember my credentials
 AND I have closed the browser or was inactive for a set period
 WHEN I navigate to the store
 THEN I am logged back in automatically
+
+GIVEN I am a registered admin user
+AND I have logged in
+WHEN I choose the option to create a new product on the product list page
+THEN I am presented with a form to fill in the new product details
+AND WHEN I enter the details
+AND save the product
+THEN the product is created in the database
+AND displayed in the product list
