@@ -76,3 +76,12 @@ AND WHEN I enter the details
 AND save the product
 THEN the product is created in the database
 AND displayed in the product list
+
+GIVEN I am a registered admin user
+AND I have logged in
+WHEN I choose to edit a product
+THEN I am shown a form with the current information
+AND WHEN I change the information
+AND save the changes
+THEN the product's information is modified
+AND the information is shown in the product list
