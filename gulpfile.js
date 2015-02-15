@@ -76,7 +76,7 @@ var src = {
 };
 
 function isMinifying(){
-	return argv.m || process.env.NODE_ENV === 'production';
+	return argv.m || (!process.env.ATOM_HOME && process.env.NODE_ENV === 'production');
 }
 
 gulp.task("default", ["jshint", "test"]);

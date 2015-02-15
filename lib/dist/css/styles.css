@@ -1,1 +1,9 @@
-a{cursor:pointer}.carousel img{max-height:200px;margin:0 auto}.grayed-out{color:#BBB}
+a {
+  cursor: pointer; }
+
+.carousel img {
+  max-height: 200px;
+  margin: 0 auto; }
+
+.grayed-out {
+  color: #BBB; }
