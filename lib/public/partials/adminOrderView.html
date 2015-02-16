@@ -4,9 +4,15 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Receiver</div>
 			<div class="panel-body">
-				<p>{{order.receiver.firstName + ' ' + order.receiver.lastName}}</p>
+				<p>
+					<span>{{order.receiver.firstName}}</span>&nbsp;
+					<span>{{order.receiver.lastName}}</span>
+				</p>
 				<p>{{order.receiver.streetAddress}}</p>
-				<p>{{order.receiver.postalCode + ', ' + order.receiver.city}}</p>
+				<p>
+					<span>{{order.receiver.postalCode}}</span>,&nbsp;
+					<span>{{order.receiver.city}}</span>
+				</p>
 			</div>
 		</div>
 		<div class="panel panel-default">
