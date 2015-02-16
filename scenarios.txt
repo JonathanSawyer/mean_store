@@ -38,16 +38,16 @@ GIVEN I am a registered non-admin user
 WHEN I log in
 THEN I do not see a link to the admin section
 
-GIVEN I am a registered admin user
+GIVEN I am an admin user
 WHEN I log in
 THEN I see a link to the admin section
 
-GIVEN I am a registered admin user
+GIVEN I am an admin user
 AND I have logged in
 WHEN I navigate to the products tab on the admin page
 THEN I see a list of all products in the system
 
-GIVEN I am a registered admin user
+GIVEN I am an admin user
 AND I have logged in
 WHEN I navigate to the orders tab on the admin page
 THEN I see a list of all orders in the system
@@ -68,7 +68,7 @@ AND I have closed the browser or was inactive for a set period
 WHEN I navigate to the store
 THEN I am logged back in automatically
 
-GIVEN I am a registered admin user
+GIVEN I am an admin user
 AND I have logged in
 WHEN I choose the option to create a new product on the product list page
 THEN I am presented with a form to fill in the new product details
@@ -77,7 +77,7 @@ AND save the product
 THEN the product is created in the database
 AND displayed in the product list
 
-GIVEN I am a registered admin user
+GIVEN I am an admin user
 AND I have logged in
 WHEN I choose to edit a product
 THEN I am shown a form with the current information
@@ -86,8 +86,14 @@ AND save the changes
 THEN the product's information is modified
 AND the information is shown in the product list
 
-GIVEN I am a registered admin user
+GIVEN I am an admin user
 AND I have logged in
 AND I am in the order administration view
 WHEN I choose the option to view an order
 THEN I am shown the delivery information, the products, and the total sum of the order
+
+GIVEN I am an admin user
+AND I have logged in
+AND I am in viewing the details of an unsent order in the admin view
+WHEN I set the order as sent
+THEN the list of orders shows it as sent
