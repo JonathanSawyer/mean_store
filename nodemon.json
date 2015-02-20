@@ -1,6 +1,6 @@
 {
 	"verbose": false,
-	"ignore": ["lib/tests/*", "lib/public/*"],
+	"ignore": ["lib/tests/*", "lib/public/*", "lib/dist/*"],
 	"env":{
 		"NODE_ENV":"development"
 	}

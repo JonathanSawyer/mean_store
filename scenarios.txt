@@ -97,3 +97,7 @@ AND I have logged in
 AND I am in viewing the details of an unsent order in the admin view
 WHEN I set the order as sent
 THEN the list of orders shows it as sent
+
+GIVEN I am a registered user
+WHEN I try to login with my email and an incorrect password
+THEN a message is shown to me which tells me either my email or password was wrong

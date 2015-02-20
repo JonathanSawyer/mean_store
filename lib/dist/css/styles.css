@@ -7,3 +7,9 @@ a {
 
 .grayed-out {
   color: #BBB; }
+
+.errorMsg {
+  background-color: #F50;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px; }
