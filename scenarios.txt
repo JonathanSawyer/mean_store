@@ -101,3 +101,9 @@ THEN the list of orders shows it as sent
 GIVEN I am a registered user
 WHEN I try to login with my email and an incorrect password
 THEN a message is shown to me which tells me either my email or password was wrong
+
+GIVEN I am a registered user
+AND I have logged in
+WHEN I add a product to my shopping cart
+AND I go to order it
+THEN my information is automatically filled into the fields
