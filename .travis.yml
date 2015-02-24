@@ -2,10 +2,8 @@ language: node_js
 node_js:
 - '0.10'
 env:
-  matrix:
-  - NODE_ENV=test
-  - E2E_BROWSER=firefox
-  - E2E_BROWSER=chrome
+  - NODE_ENV=test E2E_BROWSER=firefox
+  - NODE_ENV=test E2E_BROWSER=chrome
   global:
   - secure: KpzVG+Vj6N3/tqsAsC91Sd+PnkRkU48QD8vzZJtbNcOy/yANLOZiMMVbPH2Dut5M5tsFfb85cRnSaF2wwwWGHYcNSie5KGmfIyPXZgvr06NZrUXSZT1fzLOHJv+8v+bM+cbYx+CEkDtbpq0BHCA/vZdJk4urDl8+uJTUvu4oX8s=
   - secure: ZXXIGut5sBUWYy70r5QWF0lshu6PtExznvX8KJv1McnykzauGN7bODo1pSy5ZaAgnnekcDUPWJzjU132tTCQ6mizXYJ4RrQb+9KLMRO6YtngSNXsz4eJS1C4umw4W+204Y5BT1wlFBdDIMXjgPT1RljBfsWd0J9ddy+MrEUHMRI=
@@ -21,4 +19,4 @@ before_script:
 script:
 - gulp server-test
 - gulp client-test
-- gulp e2e-test --browser chrome
+- gulp e2e-test
