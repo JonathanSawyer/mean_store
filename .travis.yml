@@ -3,7 +3,6 @@ node_js:
 - '0.10'
 env:
   matrix:
-  - E2E_BROWSER=firefox E2E_OS=VISTA E2E_BROWSER_VERSION=31
   - E2E_BROWSER=chrome E2E_OS=LINUX
   global:
   - secure: KpzVG+Vj6N3/tqsAsC91Sd+PnkRkU48QD8vzZJtbNcOy/yANLOZiMMVbPH2Dut5M5tsFfb85cRnSaF2wwwWGHYcNSie5KGmfIyPXZgvr06NZrUXSZT1fzLOHJv+8v+bM+cbYx+CEkDtbpq0BHCA/vZdJk4urDl8+uJTUvu4oX8s=
