@@ -16,18 +16,25 @@ var livereload = require('gulp-livereload');
 var argv = require('yargs').argv;
 var changed = require('gulp-changed');
 var preprocess = require('gulp-preprocess');
+var istanbul = require('gulp-istanbul');
 
 var src = {
 	mocha : {
 		src: ['lib/tests/unit/server/**/*.js'],
-	 	watch: [
-		'gulpfile.js',
-		'index.js',
-		'lib/**/*.js',
-		'!lib/{dist,dist/**}',
-		'!lib/{public,public/**}',
-		'!lib/tests/{e2e,e2e/**}',
-		'!lib/tests/unit/{client,client/**}'
+		watch: [
+			'gulpfile.js',
+			'index.js',
+			'lib/**/*.js',
+			'!lib/{dist,dist/**}',
+			'!lib/{public,public/**}',
+			'!lib/tests/{e2e,e2e/**}',
+			'!lib/tests/unit/{client,client/**}'
+		],
+		filesUnderTest : [
+			'lib/**/*.js',
+			'!lib/{dist,dist/**}',
+			'!lib/{public,public/**}',
+			'!lib/{tests,tests/**}'
 		]},
 	karma : [
 	'lib/dist/js/vendor.js',
@@ -169,15 +176,23 @@ gulp.task('auto', ['auto-deploy', 'auto-test', 'jshint-w']);
 
 gulp.task('deploy', ["vendor-js", "vendor-css", "vendor-css-maps", "scripts", "styles", "html-index", "html-partials", "fonts"]);
 
-gulp.task("server-test", function(){
-	return gulp.src(src.mocha.src, {read: false})
-		.pipe(mocha({
-			reporter: 'spec'
-		}))
-		.on("error", notify.onError({
-			message: 'Server unit test: <%= error.message %>',
-			sound: false // deactivate sound?
-		}));
+gulp.task("server-test", function(cb){
+	gulp.src(src.mocha.filesUnderTest)
+		.pipe(istanbul())
+		.pipe(istanbul.hookRequire())
+		.on('finish', function(){
+			gulp.src(src.mocha.src, {read: false})
+				.pipe(mocha({
+					reporter: 'spec'
+				}))
+				.pipe(istanbul.writeReports())
+				.on("error", notify.onError({
+					message: 'Server unit test: <%= error.message %>',
+					sound: false // deactivate sound?
+				}))
+				.on('end', cb);
+		});
+
 });
 
 gulp.task("client-test", function(){
