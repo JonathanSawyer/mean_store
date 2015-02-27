@@ -1,8 +1,8 @@
 <div class="container">
 	<div class="col-md-6 col-md-offset-3">
-		<div class="row">
+		<div class="sink">
 			<h1><i class="glyphicon glyphicon-lock"></i>Login</h1>
-			<form ng-submit="login(user)" role="form" name="loginForm">
+			<form ng-submit="login(user)" role="form" name="loginForm" novalidate>
 				<div ng-show="err.invalidLogin" class="errorMsg">
 					Invalid email or password
 				</div>
