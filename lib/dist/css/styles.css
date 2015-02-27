@@ -15,7 +15,7 @@ a {
   -ms-border-radius: 8px;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 5px 5px 5px #CCCCCC; }
+  box-shadow: 3px 3px 3px #dfdfdf; }
 
 .errorMsg {
   background-color: rgba(240, 55, 9, 0.85);
