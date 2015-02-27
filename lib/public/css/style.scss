@@ -1,3 +1,15 @@
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin animation($anim){
+	-webkit-animation: $anim;
+	animation: $anim;
+}
+
 a {
 	cursor: pointer;
 }
@@ -13,9 +25,45 @@ a {
 	color : #BBB;
 }
 
+.sink{
+	background-color: rgba(104, 100, 100, 0.18);
+	@include border-radius(8px);
+	padding: 20px;
+	box-shadow: 3px 3px 3px #dfdfdf;
+}
+
 .errorMsg {
-	background-color: #F50;
+	background-color: rgba(240, 55, 9, 0.85);
 	padding: 8px;
-	border-radius: 8px;
+	@include border-radius(8px);
+	@include animation(pulse 0.8s 1 ease-in-out);
 	margin-bottom: 8px;
+}
+
+$pulseColorStart: rgba(255, 0, 0, 0.2);
+$pulseColorMid:   rgba(255, 0, 0, 0.6);
+$pulseSize: 6px;
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0 0 $pulseSize $pulseColorStart;
+	}
+	50% {
+		-webkit-box-shadow: 0 0 $pulseSize $pulseColorMid;
+	}
+	100% {
+		-webkit-box-shadow: 0 0 $pulseSize $pulseColorStart;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 $pulseSize $pulseColorStart;
+	}
+	50% {
+		box-shadow: 0 0 $pulseSize $pulseColorMid;
+	}
+	100% {
+		box-shadow: 0 0 $pulseSize $pulseColorStart;
+	}
 }

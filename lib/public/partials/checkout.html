@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="col-md-8 col-md-offset-2">
-		<div ng-hide="orderDone">
+		<div class="sink" ng-hide="orderDone">
 			<h1>Order summary</h1>
 
 			<h1>Shipping details</h1>
@@ -26,12 +26,12 @@
 					<label>City</label>
 					<input class="form-control" type="text" ng-model="info.city">
 				</div>
-				
+
 				<div class="form-group">
-					<button class="btn btn-default pull-left" ng-click="backToCart()">Back to cart</button>
-					<button class="btn btn-primary pull-right" type="submit">Submit order!</button>
+					<button class="btn btn-default" ng-click="backToCart()">Back to cart</button>
+					<button class="btn btn-primary" type="submit">Submit order!</button>
 				</div>
-				
+
 			</form>
 		</div>
 		<div ng-show="orderDone">
@@ -40,6 +40,6 @@
 				<button class="btn btn-primary" ng-click="backToFront()">Go back to shopping</button>
 			</div>
 		</div>
-		
+
 	</div>
 </div>

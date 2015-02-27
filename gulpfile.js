@@ -41,7 +41,8 @@ var src = {
 	'bower_components/angular-mocks/angular-mocks.js',
 	'node_modules/jasmine-sinon/lib/jasmine-sinon.js',
 	'lib/dist/js/scripts.js',
-	'lib/tests/unit/client/**/*.js'
+	'lib/tests/unit/client/**/*.js',
+	'lib/dist/partials/**/*.html'
 	],
 	e2e : [
 	'lib/tests/e2e/setup.js',

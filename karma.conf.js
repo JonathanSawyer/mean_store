@@ -19,7 +19,8 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       'node_modules/jasmine-sinon/lib/jasmine-sinon.js',
       'lib/dist/js/scripts.js',
-      'lib/tests/unit/client/**/*.js'
+      'lib/tests/unit/client/**/*.js',
+      'lib/dist/partials/**/*.html'
     ],
 
 
@@ -31,7 +32,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'lib/dist/js/scripts.js' : 'coverage'
+      'lib/dist/js/scripts.js' : 'coverage',
+      '**/*.html' : 'ng-html2js'
     },
 
 
@@ -43,6 +45,13 @@ module.exports = function(config) {
     coverageReporter : {
       type : 'html',
       dir: 'client-coverage/'
+    },
+
+    ngHtml2JsPreprocessor : {
+      cacheIdFromPath: function(filepath){
+        var result = filepath.substring('lib/dist/'.length);
+        return result;
+      }
     },
 
     // web server port
