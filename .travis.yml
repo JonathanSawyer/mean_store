@@ -17,6 +17,7 @@ before_script:
 - npm install -g -q bower
 - bower install
 script:
+- gulp deploy
 - gulp server-test
 - gulp client-test
 - gulp e2e-test

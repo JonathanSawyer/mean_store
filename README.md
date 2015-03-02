@@ -13,6 +13,8 @@ To run the server you will need to have Node.js + NPM + Bower installed, as well
 
 Run `npm install` and `bower install` to install the dependencies.
 
+Next you will need Gulp to build the files. Install it with `npm install -g gulp`. Then run `gulp deploy` to build to the dist folder.
+
 Then you can run `node .` to start the server. There is also a Nodemon configuration for running it with Nodemon.
 
 ## Testing
