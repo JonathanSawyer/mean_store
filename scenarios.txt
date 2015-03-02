@@ -107,3 +107,9 @@ AND I have logged in
 WHEN I add a product to my shopping cart
 AND I go to order it
 THEN my information is automatically filled into the fields
+
+GIVEN I am a user
+WHEN I am making an order
+AND I leave one or more required fields empty
+THEN I am shown an error message
+AND the order is not sent

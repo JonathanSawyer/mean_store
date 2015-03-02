@@ -10,6 +10,11 @@
 	animation: $anim;
 }
 
+@mixin box-shadow($shadow){
+	-webkit-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
 a {
 	cursor: pointer;
 }

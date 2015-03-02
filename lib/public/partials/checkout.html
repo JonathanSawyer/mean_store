@@ -5,31 +5,45 @@
 
 			<h1>Shipping details</h1>
 			<p ng-hide="user" class="help-block">By <a href="#/signup">creating an account</a> you could get these fields filled automatically :)</p>
-			<form ng-submit="submitOrder()">
+			<form name="orderForm" ng-submit="submitOrder()" novalidate>
 				<div class="form-group">
 					<label>First name</label>
-					<input class="form-control" type="text" ng-model="info.firstName">
+					<input name="firstName" class="form-control" type="text" ng-model="info.firstName" required>
+					<div ng-show="orderForm.firstName.$dirty && orderForm.firstName.$error.required">
+						<div class="errorMsg">Input your first name</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<label>Last name</label>
-					<input class="form-control" type="text" ng-model="info.lastName">
+					<input name="lastName" class="form-control" type="text" ng-model="info.lastName" required>
+					<div ng-show="orderForm.lastName.$dirty && orderForm.lastName.$error.required">
+						<div class="errorMsg">Input your last name</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<label>Street address</label>
-					<input class="form-control" type="text" ng-model="info.streetAddress">
+					<input name="streetAddr" class="form-control" type="text" ng-model="info.streetAddress" required>
+					<div ng-show="orderForm.streetAddr.$dirty && orderForm.streetAddr.$error.required">
+						<div class="errorMsg">Input your address</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<label>Postal code</label>
-					<input class="form-control" type="text" ng-model="info.postalCode">
+					<input name="postalCode" class="form-control" type="text" ng-model="info.postalCode" required>
+					<div ng-show="orderForm.postalCode.$dirty && orderForm.postalCode.$error.required">
+						<div class="errorMsg">Input your postal code</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<label>City</label>
-					<input class="form-control" type="text" ng-model="info.city">
+					<input name="city" class="form-control" type="text" ng-model="info.city" required>
+					<div ng-show="orderForm.city.$dirty && orderForm.city.$error.required">
+						<div class="errorMsg">Input your city</div>
+					</div>
 				</div>
-
 				<div class="form-group">
 					<button class="btn btn-default" ng-click="backToCart()">Back to cart</button>
-					<button class="btn btn-primary" type="submit">Submit order!</button>
+					<button class="btn btn-primary" ng-disabled="orderForm.$invalid" type="submit">Submit order!</button>
 				</div>
 
 			</form>
