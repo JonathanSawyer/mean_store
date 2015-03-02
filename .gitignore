@@ -8,3 +8,10 @@ node_modules
 
 # Bower dependencies
 bower_components
+
+# Coverage artifacts
+client-coverage
+coverage
+
+# Build output folder
+lib/dist
