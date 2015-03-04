@@ -45,6 +45,12 @@ a {
 	margin-bottom: 8px;
 }
 
+.product-table {
+	input {
+		width:30px;
+	}
+}
+
 $pulseColorStart: rgba(255, 0, 0, 0.2);
 $pulseColorMid:   rgba(255, 0, 0, 0.6);
 $pulseSize: 6px;
